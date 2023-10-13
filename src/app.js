@@ -1,10 +1,15 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 3001;
 
 // Static Data for the API
 const fs = require('fs');
 const geojsonData = JSON.parse(fs.readFileSync('National_Obesity_By_State.geojson', 'utf8'));
+
+// GET /api/all
+app.get('/api/all', (req, res) => {
+    res.json(geojsonData);
+});
 
 // GET /api/states
 app.get('/api/states', (req, res) => {
