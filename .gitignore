@@ -1,0 +1,26 @@
+# Ignore operating system generated files
+.DS_Store
+
+# Ignore logs and other generated files
+logs/
+*.log
+
+# Ignore compiled binaries and executables
+*.exe
+*.out
+*.app
+
+# Ignore dependencies and package managers
+node_modules/
+vendor/
+
+# Ignore environment-specific files
+.env
+.env.local
+
+# Ignore database files
+*.sqlite
+
+# Ignore user-specific files
+.vscode/
+.idea/
