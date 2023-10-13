@@ -39,9 +39,9 @@ app.get('/api/obesity', (req, res) => {
 // GET /api/state/:identifier
   app.get('/api/state/:identifier', (req, res) => {
     const { identifier } = req.params;
-  
+    
     const stateFeature = geojsonData.features.find((feature) => {
-        const idMatch = feature.properties.FID === identifier;
+        const idMatch = feature.properties.FID == identifier;
         const nameMatch = feature.properties.NAME.toLowerCase() === identifier.toLowerCase();
         return idMatch || nameMatch;
       });
