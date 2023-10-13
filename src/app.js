@@ -25,6 +25,17 @@ app.get('/api/states', (req, res) => {
     res.json(stateList);
   });
 
+  // GET /api/obesity
+app.get('/api/obesity', (req, res) => {
+  const stateList = geojsonData.features.map((feature) => ({
+    id: feature.properties.FID, 
+    name: feature.properties.NAME,
+    obesity: feature.properties.Obesity,
+  }));
+
+  res.json(stateList);
+});
+
 // GET /api/state/:identifier
   app.get('/api/state/:identifier', (req, res) => {
     const { identifier } = req.params;
